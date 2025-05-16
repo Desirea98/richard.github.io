@@ -76,4 +76,30 @@ window.addEventListener('DOMContentLoaded', event => {
         }
     })();
 
+    // 花瓣/粒子动画
+    (function () {
+        const petalBg = document.getElementById('petal-bg');
+        if (!petalBg) return;
+        const petalCount = 18;
+        const petalColors = ['#f7b3da', '#b3e5fc', '#fff6b3', '#e1bee7', '#ffe0b2'];
+        for (let i = 0; i < petalCount; i++) {
+            const petal = document.createElement('div');
+            petal.className = 'petal-anim';
+            const size = 18 + Math.random() * 18;
+            petal.style.width = size + 'px';
+            petal.style.height = (size * 0.7) + 'px';
+            petal.style.background = petalColors[Math.floor(Math.random() * petalColors.length)];
+            petal.style.opacity = 0.7 + Math.random() * 0.3;
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.top = (-10 - Math.random() * 10) + 'vh';
+            petal.style.borderRadius = '50% 60% 50% 60%/60% 50% 60% 50%';
+            petal.style.position = 'absolute';
+            petal.style.zIndex = 0;
+            petal.style.boxShadow = '0 2px 8px #fff8';
+            petal.style.animation = `petalFall ${6 + Math.random() * 6}s linear infinite`;
+            petal.style.animationDelay = (Math.random() * 6) + 's';
+            petalBg.appendChild(petal);
+        }
+    })();
+
 });

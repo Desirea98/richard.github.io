@@ -82,6 +82,8 @@ body {
 /* Section Styling */
 section {
     padding: var(--section-padding); /* Use variable for consistent padding */
+    position: relative;
+    z-index: 1;
 }
 
 section header h2 {
@@ -97,6 +99,15 @@ section .main-body {
     font-weight: 400;
     line-height: 1.8; /* Increased line-height for paragraphs */
     color: var(--text-color);
+    position: relative;
+    z-index: 3;
+    background: rgba(255,255,255,0.85);
+    border-radius: 1.2em;
+    box-shadow: 0 4px 32px 0 #e0e6f7cc;
+    padding: 2.2em 2em 2em 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    overflow: visible;
 }
 
 .bg-gradient-primary-to-secondary-light {
@@ -136,7 +147,7 @@ section .main-body {
     max-width: 55em;
     margin: 0 1.5rem 0 0;
     float: right;
-    z-index: 9000;
+    z-index: 10;
 }
 
 #avatar img {
@@ -186,23 +197,20 @@ section .main-body {
 .main-body h5 { font-size: 1.1em; }  /* 1.3rem * 1.1 = 1.43rem */
 .main-body h6 { font-size: 1em; }    /* 1.3rem * 1 = 1.3rem */
 
-/* 炫酷标题样式 */
+/* 炫酷标题样式优化：更深色渐变+描边+阴影，保证可读性 */
 .main-body h1, .main-body h2, .main-body h3, .main-body h4, .main-body h5, .main-body h6 {
     position: relative;
-    color: #3948d2;
+    color: #233a7e;
     font-weight: 800;
-    background: linear-gradient(90deg, #7ecbff 10%, #fff 40%, #3948d2 90%);
+    background: linear-gradient(90deg, #7ecbff 10%, #233a7e 90%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 8px #7ecbff, 0 0 16px #3948d2;
-    animation: shineTitle 2.5s linear infinite;
-}
-
-@keyframes shineTitle {
-    0% { filter: brightness(1.1) drop-shadow(0 0 8px #7ecbff); }
-    50% { filter: brightness(1.5) drop-shadow(0 0 16px #fff); }
-    100% { filter: brightness(1.1) drop-shadow(0 0 8px #7ecbff); }
+    text-shadow: 1px 1px 4px #fff, 0 2px 8px #7ecbff33, 0 0 2px #233a7e;
+    /* 文字描边增强可读性 */
+    -webkit-text-stroke: 1px #233a7e;
+    text-stroke: 1px #233a7e;
+    animation: none;
 }
 
 /* Paragraphs */
@@ -375,6 +383,7 @@ section .main-body {
     height: 100vh;
     pointer-events: none;
     z-index: 0;
+    display: none !important;
 }
 
 /* 保证主内容在背景之上 */
@@ -405,6 +414,41 @@ section .main-body {
     100% { opacity: 0.1; filter: blur(2px); }
 }
 
+/* 花瓣/粒子动画背景 */
+#petal-bg {
+    position: fixed;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* 花瓣飘落动画 */
+.petal-anim {
+    pointer-events: none;
+    will-change: transform, opacity;
+}
+@keyframes petalFall {
+    0% {
+        transform: translateY(0) rotateZ(0deg) scale(1);
+        opacity: 0.7;
+    }
+    10% {
+        opacity: 1;
+    }
+    60% {
+        transform: translateY(60vh) rotateZ(180deg) scale(1.1);
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(100vh) rotateZ(360deg) scale(0.9);
+        opacity: 0;
+    }
+}
+
 @media (max-width: 991px) {
     .navbar-nav {
         flex-direction: row !important;
@@ -420,6 +464,7 @@ section .main-body {
     .electric-line {
         height: 100px;
     }
+    #petal-bg { height: 120vh; }
 }
 
 
