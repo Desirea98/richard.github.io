@@ -60,4 +60,20 @@ window.addEventListener('DOMContentLoaded', event => {
             .catch(error => console.log(error));
     })
 
+    // 动态生成闪电线条
+    (function () {
+        const bg = document.getElementById('electric-bg');
+        if (!bg) return;
+        const count = 12; // 闪电数量
+        for (let i = 0; i < count; i++) {
+            const line = document.createElement('div');
+            line.className = 'electric-line';
+            line.style.left = Math.random() * 100 + 'vw';
+            line.style.top = Math.random() * 80 + 'vh';
+            line.style.height = (120 + Math.random() * 100) + 'px';
+            line.style.animationDelay = (Math.random() * 1.2) + 's';
+            bg.appendChild(line);
+        }
+    })();
+
 });

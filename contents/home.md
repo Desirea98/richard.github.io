@@ -15,7 +15,7 @@ Hey, I am currently looking for a position as a daily Java development intern.
 • Major: Electronic Information
 • 2024 recommended graduate program to Nanjing University
  
-🏫 **HoHai University**, Honours Bachelor of HoHai Un (2020 – 2024)  
+🏫 **HoHai University**, Honours Bachelor of HoHai University (2020 – 2024)  
 • Major: Communication Engineering
 • GPA: 4.7/5.0 (top 1%)  
 

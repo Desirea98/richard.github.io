@@ -8,6 +8,14 @@
     --bs-gray-900: #212529; /* Define if not already in styles.css */
 }
 
+body {
+    /* 炫酷动态背景：电光闪电效果 */
+    background: #fff;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
 .header {
     border-bottom: solid 2px var(--bs-blue);
     z-index: 10000;
@@ -178,6 +186,25 @@ section .main-body {
 .main-body h5 { font-size: 1.1em; }  /* 1.3rem * 1.1 = 1.43rem */
 .main-body h6 { font-size: 1em; }    /* 1.3rem * 1 = 1.3rem */
 
+/* 炫酷标题样式 */
+.main-body h1, .main-body h2, .main-body h3, .main-body h4, .main-body h5, .main-body h6 {
+    position: relative;
+    color: #3948d2;
+    font-weight: 800;
+    background: linear-gradient(90deg, #7ecbff 10%, #fff 40%, #3948d2 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 8px #7ecbff, 0 0 16px #3948d2;
+    animation: shineTitle 2.5s linear infinite;
+}
+
+@keyframes shineTitle {
+    0% { filter: brightness(1.1) drop-shadow(0 0 8px #7ecbff); }
+    50% { filter: brightness(1.5) drop-shadow(0 0 16px #fff); }
+    100% { filter: brightness(1.1) drop-shadow(0 0 8px #7ecbff); }
+}
+
 /* Paragraphs */
 .main-body p {
     margin-bottom: 1.1em; /* Increased paragraph bottom margin */
@@ -340,6 +367,44 @@ section .main-body {
   100% { background-color: rgba(0, 0, 0, 0.5); }
 }
 
+#electric-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* 保证主内容在背景之上 */
+#page-top, .header, .top-section, .container, section, footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* 闪电动画样式 */
+.electric-line {
+    position: absolute;
+    width: 2px;
+    height: 180px;
+    background: linear-gradient(180deg, #fff 0%, #7ecbff 40%, #3948d2 100%);
+    box-shadow: 0 0 16px 4px #7ecbff, 0 0 32px 8px #3948d2;
+    opacity: 0.7;
+    animation: electricFlash 1.2s linear infinite;
+    border-radius: 1.5px;
+}
+
+@keyframes electricFlash {
+    0% { opacity: 0.1; filter: blur(2px); }
+    10% { opacity: 1; filter: blur(0); }
+    20% { opacity: 0.7; }
+    40% { opacity: 1; }
+    60% { opacity: 0.5; }
+    80% { opacity: 1; }
+    100% { opacity: 0.1; filter: blur(2px); }
+}
+
 @media (max-width: 991px) {
     .navbar-nav {
         flex-direction: row !important;
@@ -348,6 +413,12 @@ section .main-body {
     .main-body {
         font-size: 1rem;
         padding: 0 0.5em;
+    }
+    #electric-bg {
+        height: 120vh;
+    }
+    .electric-line {
+        height: 100px;
     }
 }
 
