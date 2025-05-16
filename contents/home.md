@@ -17,7 +17,7 @@ Hey, I am currently looking for a position as a daily Java development intern.
  
 🏫 **HoHai University**, Honours Bachelor of HoHai University (2020 – 2024)  
 • Major: Communication Engineering<br/>
-• GPA: 4.7/5.0 (top 1%)  
+• GPA: 4.7/5.0 (top 3%)  
 
 #### Skills
 | Icon | Area                  | Details                                                                                                                                                                                             |
