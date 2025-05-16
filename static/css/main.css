@@ -1,14 +1,37 @@
 @import "./styles.css";
 
-
-:root{
-    --h-title-color:#3948d2;
+:root {
+    --h-title-color: #3948d2;
+    --text-color: #343a40;
+    --section-padding: 2.5rem 0; /* Added variable for section padding */
+    --bs-gray-800: #343a40; /* Define if not already in styles.css, or use a similar dark gray */
+    --bs-gray-900: #212529; /* Define if not already in styles.css */
 }
 
 .header {
     border-bottom: solid 2px var(--bs-blue);
     z-index: 10000;
+    padding: 0.5rem 0; /* Added padding to header */
 }
+
+/* Navigation Bar Improvements */
+#mainNav .navbar-nav .nav-item .nav-link {
+    padding: 0.5em 1em; /* Adjust padding for nav links */
+    font-size: 0.95rem; /* Slightly adjust font size if needed */
+}
+
+#navbarResponsive {
+    justify-content: flex-end; /* Align items to the right */
+}
+
+.navbar-nav {
+    flex-direction: row; /* Ensure items are in a row */
+}
+
+.navbar-nav .nav-item {
+    margin-left: 0.5rem; /* Add some space between nav items */
+}
+/* End Navigation Bar Improvements */
 
 .bg-bottom {
     background-color: var(--h-title-color);
@@ -42,20 +65,25 @@
     animation: electricPulseEffect 3s infinite ease-in-out; /* Add animation */
 }
 
-section header h2{
+/* Section Styling */
+section {
+    padding: var(--section-padding); /* Use variable for consistent padding */
+}
+
+section header h2 {
     font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
     color: var(--h-title-color);
     font-size: 2.3rem;
-    line-height: 4rem;
+    line-height: 2.8rem; /* Adjusted line-height */
+    margin-bottom: 1.5rem; /* Added margin below section titles */
 }
 
-section .main-body{
-    font-size: 1.3rem;
-    font-weight: 400;  /* 从 200 调整为正常字重 */
-    line-height: 1.7;  /* 调整行高以提高可读性 */
-    color: #343a40; /* 使用较深的颜色以提高对比度 */
+section .main-body {
+    font-size: 1.1rem; /* Adjusted base font size for readability */
+    font-weight: 400;
+    line-height: 1.8; /* Increased line-height for paragraphs */
+    color: var(--text-color);
 }
-
 
 .bg-gradient-primary-to-secondary-light {
     background: linear-gradient(45deg, #fcfcfc, #ffffff) !important;
@@ -64,8 +92,6 @@ section .main-body{
 .bg-gradient-primary-to-secondary-gray {
     background: linear-gradient(45deg, #f0f0f0, #f1f1f1) !important;
 }
-
-
 
 .on-top {
     position: relative;
@@ -89,11 +115,10 @@ section .main-body{
     background: rgba(0, 0, 0, 0.4);
 }
 
-
 #avatar {
     position: relative;
     height: 0;
-    top:min(-65px,max(-100px,calc(-1*100vw/12)));
+    top: min(-65px, max(-100px, calc(-1*100vw/12)));
     max-width: 55em;
     margin: 0 1.5rem 0 0;
     float: right;
@@ -101,7 +126,7 @@ section .main-body{
 }
 
 #avatar img {
-    height: max(130px,min(200px,calc(100vw/6)));
+    height: max(130px, min(200px, calc(100vw/6)));
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -111,7 +136,7 @@ section .main-body{
     }
 }
 
-/* Markdown 内容中的标题 */
+/* Markdown Content Styling Improvements */
 .main-body h1,
 .main-body h2,
 .main-body h3,
@@ -119,14 +144,27 @@ section .main-body{
 .main-body h5,
 .main-body h6 {
     font-family: "Newsreader", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-weight: 600;
-    margin-top: 1.5em;
-    margin-bottom: 0.8em;
-    line-height: 1.3;
-    color: var(--bs-gray-800); /* 使用 Bootstrap 的深灰色变量 */
+    font-weight: 500; /* Unified font weight for all headings */
+    margin-top: 2em;
+    margin-bottom: 1em;
+    line-height: 1.4;
+    color: var(--bs-gray-800); /* Unified color for all headings */
 }
 
-/* 调整 .main-body 内标题的字号 */
+/* Ensure strong tags within headings inherit the heading's font-weight */
+.main-body h1 strong,
+.main-body h2 strong,
+.main-body h3 strong,
+.main-body h4 strong,
+.main-body h5 strong,
+.main-body h6 strong {
+    font-weight: inherit;
+}
+
+/* General h3 and h4 sizes - these are fine */
+.main-body h3 { font-size: 1.5em; margin-top: 1.5em;}
+.main-body h4 { font-size: 1.25em; margin-top: 1.2em; color: var(--h-title-color); } /* Retains blue color for home.md h4 etc. */
+
 .main-body h1 { font-size: 2em; }    /* 1.3rem * 2 = 2.6rem */
 .main-body h2 { font-size: 1.75em; } /* 1.3rem * 1.75 = 2.275rem */
 .main-body h3 { font-size: 1.5em; }  /* 1.3rem * 1.5 = 1.95rem */
@@ -134,19 +172,33 @@ section .main-body{
 .main-body h5 { font-size: 1.1em; }  /* 1.3rem * 1.1 = 1.43rem */
 .main-body h6 { font-size: 1em; }    /* 1.3rem * 1 = 1.3rem */
 
-/* 段落 */
+/* Paragraphs */
 .main-body p {
-    margin-bottom: 1em;
+    margin-bottom: 1.2em; /* Increased paragraph bottom margin */
 }
 
-/* 列表 */
+.main-body p strong {
+    font-weight: 600; /* Adjusted font-weight for strong tags in paragraphs */
+    color: var(--text-color); /* Or a specific emphasis color if preferred */
+}
+
+/* Lists (Key for Experience and Project sections) */
 .main-body ul,
 .main-body ol {
-    margin-bottom: 1em;
-    padding-left: 1.8em; /* 列表缩进 */
+    margin-bottom: 1.2em;
+    padding-left: 1.5em; /* Adjusted padding for better alignment */
 }
 
 .main-body li {
+    margin-bottom: 0.8em; /* Increased spacing between list items */
+    /* The following properties ensure list items flow correctly and don't break words strangely */
+    display: list-item; /* Ensure it behaves like a list item */
+    text-align: left; /* Align text to the left */
+    word-break: normal; /* Prevent aggressive word breaking */
+    overflow-wrap: break-word; /* Allow breaking long words if necessary but prefer not to */
+}
+
+.main-body li p { /* If paragraphs are used inside list items */
     margin-bottom: 0.5em;
 }
 
@@ -229,6 +281,45 @@ section .main-body{
 .main-body th {
     background-color: var(--bs-gray-100);
     font-weight: 600;
+}
+
+/* Specific adjustments for Experience and Project sections if needed */
+#experience .main-body,
+#project .main-body {
+    /* You can add specific styles here if general .main-body is not enough */
+}
+
+#experience .main-body h3, /* Titles like "Java Software Engineer Intern" */
+#project .main-body h3 {   /* Project Titles */
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.75rem;
+    color: var(--bs-gray-800); /* Unified with general heading color */
+    /* font-weight: 500; will be inherited from .main-body h3 */
+}
+
+#experience .main-body h4, /* "Key Contributions" */
+#project .main-body h4 {    /* "Key Responsibilities" */
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    /* font-size: 1.25em; will be inherited from general .main-body h4 if not overridden, or use 1.25rem for consistency */
+    font-size: 1.25rem; /* Explicitly set for clarity */
+    color: var(--h-title-color); /* Retains blue color for distinction */
+    /* font-weight: 500; will be inherited from .main-body h4 */
+}
+
+#experience .main-body strong,
+#project .main-body strong {
+    font-weight: 600; /* Ensures strong tags within these sections are also 600 */
+    /* color will be inherited from .main-body p strong or can be set specifically if needed */
+}
+
+/* Ensure strong tags within specific h3/h4 in these sections also inherit */
+#experience .main-body h3 strong,
+#project .main-body h3 strong,
+#experience .main-body h4 strong,
+#project .main-body h4 strong {
+    font-weight: inherit;
 }
 
 /* Added animation keyframes for the top section overlay */
