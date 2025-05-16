@@ -80,6 +80,29 @@
 </head>
 
 <body id="page-top">
+    <!-- Loading Animation Start (真实机器人 Lottie 动画) -->
+    <div id="cool-loading" style="position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:linear-gradient(135deg, #0a0a0a 0%, #141e30 50%, #243b55 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;">
+        <div id="robot-lottie" style="width:380px;height:380px;"></div>
+        <div style="color:#ff2a6d;text-shadow:0 0 10px #ff2a6d,0 0 20px #ff2a6d;font-size:1.3rem;letter-spacing:3px;margin-top:20px;font-family:'Kanit',sans-serif;font-weight:600;">SYSTEM LOADING</div>
+    </div>
+    <script src="https://unpkg.com/lottie-web@5.12.2/build/player/lottie.min.js"></script>
+    <script>
+        // 使用 Lottie 播放真实机器人动画
+        lottie.loadAnimation({
+            container: document.getElementById('robot-lottie'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'https://assets9.lottiefiles.com/packages/lf20_vndgbfub.json' // 真实机器人动画资源
+        });
+        // 动画持续3.2秒后隐藏loading，显示主内容
+        window.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.getElementById('cool-loading').style.display = 'none';
+            }, 1500);
+        });
+    </script>
+    <!-- Loading Animation End -->
     <div id="petal-bg"></div>
     <div id="electric-bg"></div>
     <!-- Navigation-->
