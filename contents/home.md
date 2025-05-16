@@ -12,11 +12,11 @@ Hey, I am currently looking for a position as a daily Java development intern.
 
 #### Education  
 🏫 **NanJing University**, Master of Degree (2024 – 2027)  
-• Major: Electronic Information
+• Major: Electronic Information<br/>
 • 2024 recommended graduate program to Nanjing University
  
 🏫 **HoHai University**, Honours Bachelor of HoHai University (2020 – 2024)  
-• Major: Communication Engineering
+• Major: Communication Engineering<br/>
 • GPA: 4.7/5.0 (top 1%)  
 
 #### Skills
@@ -32,4 +32,4 @@ Hey, I am currently looking for a position as a daily Java development intern.
 | 🌐   | Language Proficiency  | Passed CET-6 (568), good English communication, proficient in reading official English documentation.                                                                                                 |
 
 #### 🔬 Research Interests  
-Reinforment Learning, LargLanguaModel.
+Reinforment Learning,Large Language Model.
