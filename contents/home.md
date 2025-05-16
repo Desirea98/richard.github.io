@@ -3,18 +3,15 @@
 I'm currently pursuing a Master's degree in XX at the Department of XX, XX University, XX.
 
 #### Email  
-<code>XX@XX.XX</code>  
-<code>XX@XX.XX</code>
+<code>richard-tam@smail.nju.edu.cn</code>  
+<code>richard-tam@smail.nju.edu.cn</code>
 
 #### Education  
-**XX University**, Master of XX (XX – XX)  
-• GPA: XX/XX  
-
-**XX University**, Exchange student <br>  
-• As a XX, represented my college as an outstanding student for a XX exchange program.  
-
-**XX University**, Honours Bachelor of XX (XX – XX)  
-• GPA: XX/XX (top XX%)  
+**XX University**, Master of Degree (2024 – 2027)  
+• 2024 recommended graduate program to Nanjing University
+ 
+**HoHai University**, Honours Bachelor of HoHai Un (2020 – 2024)  
+• GPA: 4.7/5.0 (top 1%)  
 
 #### Research Interests  
-XX, XX, XX, XX.
+Reinforment Learning, LargLanguaModel.
