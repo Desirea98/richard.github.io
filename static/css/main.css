@@ -148,6 +148,7 @@ section .main-body {
     margin: 0 1.5rem 0 0;
     float: right;
     z-index: 10;
+    display: none;
 }
 
 #avatar img {
@@ -465,6 +466,13 @@ section .main-body {
         height: 100px;
     }
     #petal-bg { height: 120vh; }
+}
+
+/* 如果需要让主内容更居中，可以调整container的最大宽度和边距 */
+.container.px-5 {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
