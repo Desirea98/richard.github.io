@@ -27,6 +27,7 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link type="text/css" href="static/css/styles.css" rel="stylesheet" />
     <link type="text/css" href="static/css/main.css" rel="stylesheet" />
+    <link type="text/css" href="static/css/visitor-counter.css" rel="stylesheet" />
 
     <!-- Bootstrap core JS-->
     <script type="text/javascript" src="static/js/bootstrap.bundle.min.js"></script>
@@ -76,6 +77,7 @@
     <!-- Core JS-->
     <script type="text/javascript" src="static/js/scripts.js"></script>
     <script type="text/javascript" src="static/js/js-yaml.min.js"></script>
+    <script type="text/javascript" src="static/js/visitor-counter.js"></script>
 
 </head>
 
@@ -212,6 +214,21 @@
         </div>
     </footer>
 
+    <!-- 访问计数和实时时间组件 -->
+    <div class="stats-container">
+        <div class="stats-item">
+            <i class="bi bi-eye-fill"></i>
+            <span class="stats-label">访问次数:</span>
+            <span id="visitor-counter" class="stats-value">0</span>
+        </div>
+        <div class="stats-item">
+            <i class="bi bi-clock-fill"></i>
+            <div id="real-time-clock">
+                <div class="time">00:00:00</div>
+                <div class="date">2025-05-19 星期一</div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
